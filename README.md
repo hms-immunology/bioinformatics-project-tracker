@@ -52,11 +52,11 @@ A comprehensive web application designed specifically for bioinformatics researc
 ## Screenshots
 
 ### Main Dashboard
-![Project Overview](screenshots/project-overview.png)
+![Project Overview](screenshots/project-details.png)
 *Main dashboard showing multiple project cards with drag-and-drop functionality, filtering options, and project overview*
 
 ### Project Details & Analytics
-![Project Details](screenshots/project-details.png)
+![Project Details](screenshots/project-overview.png)
 *Detailed project form with step tracking, progress management, timeline visualization, and project configuration*
 
 ## Quick Start
