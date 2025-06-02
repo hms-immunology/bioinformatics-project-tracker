@@ -1,70 +1,261 @@
-# Getting Started with Create React App
+# Bioinformatics Project Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![React](https://img.shields.io/badge/React-18+-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Available Scripts
+A comprehensive web application designed specifically for bioinformatics researchers to manage, track, and organize their research projects efficiently. Built with React and modern web technologies, this tool provides an intuitive interface for project management with features tailored to computational biology workflows.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Project Management
+- **Drag-and-drop project organization** with sortable cards
+- **Multi-stage workflow tracking** (Planning → Data Collection → Analysis → Complete)
+- **Priority management** (Low, Medium, High, Critical)
+- **Progress tracking** with visual progress bars and percentage completion
+- **Timeline visualization** with project deadlines and milestones
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Bioinformatics-Specific Templates
+- **Pre-built workflow templates** for common analyses:
+  - RNA-seq Analysis
+  - Genome Assembly
+  - Variant Calling
+  - Metagenomics
+- **Step categorization** (Lab Work, Analysis, Documentation, Review)
+- **Smart suggestions** for common bioinformatics steps
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Time Tracking
+- **Built-in time tracker** for each project
+- **Session-based tracking** with start/stop functionality
+- **Cumulative time reporting** across projects
+- **Productivity insights** and time analytics
 
-### `npm test`
+### Advanced Analytics
+- **Dashboard overview** with key metrics
+- **Progress visualization** using charts and graphs
+- **Smart insights** and project recommendations
+- **Deadline monitoring** with overdue alerts
+- **Performance metrics** and completion rates
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### User Experience
+- **Dark/Light mode** toggle for comfortable viewing
+- **Responsive design** that works on desktop, tablet, and mobile
+- **Advanced search and filtering** by stage, priority, tags, and text
+- **File attachment support** for protocols, data files, and documents
+- **Tagging system** for project categorization
 
-### `npm run build`
+### Data Export
+- **PDF reports** with project summaries and progress
+- **Word document export** for detailed project documentation
+- **Local data persistence** with browser storage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Quick Start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js 14.0 or higher
+- npm or yarn package manager
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/bioinf-tracker.git
+   cd bioinf-tracker
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Open your browser**
+   Navigate to `http://localhost:3000` to view the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Building for Production
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This creates an optimized production build in the `build` folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage Guide
 
-### Code Splitting
+### Creating Your First Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Click "New Project"** in the top right corner
+2. **Fill in basic information**:
+   - Project name (e.g., "RNA-seq Analysis - Cancer Study")
+   - Current stage (Planning, Data Collection, etc.)
+   - Priority level
+   - Start and due dates
+   - Description
 
-### Analyzing the Bundle Size
+3. **Add project steps**:
+   - Use templates for common workflows
+   - Drag and drop to reorder steps
+   - Categorize steps by type (Lab Work, Analysis, etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Organize with tags**: Add relevant tags like "RNA-seq", "Cancer", "High-throughput"
 
-### Making a Progressive Web App
+### Managing Projects
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Drag cards** to reorder projects by priority
+- **Use the search bar** to find specific projects
+- **Filter by stage, priority, or tags** using the filter controls
+- **Track time** using the built-in timer for each project
+- **Attach files** like protocols, data files, or documentation
 
-### Advanced Configuration
+### Analytics and Reporting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Switch to **Dashboard view** for overview metrics
+- Use **Analytics view** for detailed insights and recommendations
+- **Export reports** in PDF or Word format for sharing or archiving
 
-### Deployment
+## Technical Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Built With
+- **React 18+** - Modern JavaScript framework
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Responsive chart library
+- **DND Kit** - Modern drag and drop library
+- **Date-fns** - Modern date utility library
+- **jsPDF & docx** - Document generation
+- **React Select** - Enhanced select components
 
-### `npm run build` fails to minify
+### Key Dependencies
+```json
+{
+  "@dnd-kit/core": "^6.3.1",
+  "@dnd-kit/sortable": "^10.0.0",
+  "date-fns": "^4.1.0",
+  "docx": "^9.5.0",
+  "jspdf": "^3.0.1",
+  "lucide-react": "^0.511.0",
+  "react": "^19.1.0",
+  "react-select": "^5.10.1",
+  "recharts": "^2.15.3"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Project Structure
+```
+bioinf-tracker/
+├── public/                 # Static assets
+├── src/
+│   ├── App.js             # Main application component
+│   ├── index.js           # Application entry point
+│   ├── index.css          # Global styles with Tailwind
+│   └── ...
+├── package.json           # Dependencies and scripts
+├── tailwind.config.js     # Tailwind configuration
+└── README.md             # This file
+```
+
+## Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory for custom configuration:
+
+```env
+REACT_APP_VERSION=1.0.0
+REACT_APP_BUILD_DATE=06/02/2025
+```
+
+### Customization
+
+#### Adding New Templates
+Edit the `BIOINFORMATICS_TEMPLATES` object in `App.js` to add new workflow templates:
+
+```javascript
+const BIOINFORMATICS_TEMPLATES = {
+  'Your New Template': {
+    category: 'Analysis',
+    steps: [
+      { text: 'Step 1', category: 'Lab Work' },
+      { text: 'Step 2', category: 'Analysis' },
+      // ... more steps
+    ]
+  }
+};
+```
+
+#### Modifying Stages or Priorities
+Update the arrays in `App.js`:
+
+```javascript
+const stages = ['Planning', 'Data Collection', /* your stages */];
+const priorities = ['Low', 'Medium', 'High', 'Critical'];
+```
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit your changes**: `git commit -m 'Add amazing feature'`
+4. **Push to the branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+### Development Guidelines
+- Follow React best practices
+- Use Tailwind CSS for styling
+- Ensure responsive design
+- Add JSDoc comments for complex functions
+- Test on multiple browsers
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Eren Ada, PhD**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@domain.com
+
+## Acknowledgments
+
+- React community for excellent documentation
+- Tailwind CSS for the utility-first approach
+- Recharts for beautiful data visualization
+- All contributors to the open-source libraries used
+
+## Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/bioinf-tracker/issues) section
+2. Create a new issue with detailed description
+3. For urgent matters, contact the author directly
+
+## Roadmap
+
+### Version 2.0 (Planned)
+- [ ] Team collaboration features
+- [ ] Cloud synchronization
+- [ ] Advanced analytics with machine learning insights
+- [ ] Integration with common bioinformatics tools
+- [ ] Mobile app development
+- [ ] API for third-party integrations
+
+### Version 1.1 (Near-term)
+- [ ] Enhanced template library
+- [ ] Bulk project operations
+- [ ] Calendar integration
+- [ ] Notification system
+- [ ] Data backup/restore functionality
+
+---
+
+**Created:** June 2, 2025  
+**Last Updated:** June 2, 2025  
+**Version:** 1.0.0
+
+Made for the bioinformatics community
