@@ -1363,6 +1363,165 @@ const AdvancedAnalytics = ({ projects, darkMode }) => {
   );
 };
 
+// About Component
+const About = ({ darkMode }) => {
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
+        <div className="text-center">
+          <h2 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+            Bioinformatics Project Tracker
+          </h2>
+          <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'} mb-6`}>
+            A comprehensive tool for managing and tracking bioinformatics research projects
+          </p>
+          <div className="flex justify-center gap-4">
+            <a
+              href="https://github.com/hms-immunology/bioinformatics-project-tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Project Description */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
+        <h3 className={`text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+          About This Project
+        </h3>
+        <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} space-y-4`}>
+          <p>
+            The Bioinformatics Project Tracker is a comprehensive web application specifically designed for 
+            bioinformatics researchers to manage, track, and organize their research projects efficiently. 
+            Built with React and modern web technologies, this tool provides an intuitive interface for 
+            project management with features tailored to computational biology workflows.
+          </p>
+          <p>
+            This application ensures complete data privacy as all project information is stored locally 
+            in your browser. No data is sent to external servers, making it perfect for sensitive research 
+            projects while maintaining full functionality.
+          </p>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
+        <h3 className={`text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+          Key Features
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-3">
+            <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <h4 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+                Project Management
+              </h4>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Drag-and-drop project organization</li>
+                <li>Multi-stage workflow tracking</li>
+                <li>Priority management system</li>
+                <li>Progress tracking with visual indicators</li>
+              </ul>
+            </div>
+            <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <h4 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+                Bioinformatics Templates
+              </h4>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Pre-built workflow templates</li>
+                <li>RNA-seq, Genome Assembly, Variant Calling</li>
+                <li>Metagenomics analysis workflows</li>
+                <li>Smart step suggestions</li>
+              </ul>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <h4 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+                Analytics & Tracking
+              </h4>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>Built-in time tracking</li>
+                <li>Progress visualization</li>
+                <li>Performance metrics</li>
+                <li>Smart insights and recommendations</li>
+              </ul>
+            </div>
+            <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <h4 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+                Data Export
+              </h4>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li>PDF report generation</li>
+                <li>Word document export</li>
+                <li>Local data persistence</li>
+                <li>Complete privacy protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Developer Info */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
+        <h3 className={`text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+          Developer
+        </h3>
+        <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className="mb-2">
+            <strong className={`${darkMode ? 'text-white' : 'text-gray-900'}`}>Eren Ada, PhD</strong>
+          </p>
+          <p className="text-sm">
+            Department of Immunology, Harvard Medical School
+          </p>
+          <div className="mt-4 flex gap-4">
+            <a
+              href="https://github.com/erenada"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1 ${darkMode ? 'text-blue-400 hover:text-blue-300' : ''}`}
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
+              </svg>
+              GitHub Profile
+            </a>
+            <a
+              href="mailto:erenada@gmail.com"
+              className={`text-blue-600 hover:text-blue-700 text-sm flex items-center gap-1 ${darkMode ? 'text-blue-400 hover:text-blue-300' : ''}`}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Version Info */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6`}>
+        <h3 className={`text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+          Version Information
+        </h3>
+        <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-sm space-y-2`}>
+          <p><strong>Version:</strong> 1.0.0</p>
+          <p><strong>Last Updated:</strong> June 2, 2025</p>
+          <p><strong>License:</strong> MIT License</p>
+          <p><strong>Built with:</strong> React 19+, Tailwind CSS, Recharts, DND Kit</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const BioinformaticsTracker = () => {
   // Initialize projects from localStorage or use default projects
   const [projects, setProjects] = useState(() => {
@@ -1425,7 +1584,7 @@ const BioinformaticsTracker = () => {
   }, [projects]);
 
   // UI State
-  const [currentView, setCurrentView] = useState('projects'); // 'projects', 'dashboard', 'analytics'
+  const [currentView, setCurrentView] = useState('projects'); // 'projects', 'dashboard', 'analytics', 'about'
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('bioinf-dark-mode');
     return saved ? JSON.parse(saved) : false;
@@ -1683,6 +1842,21 @@ const BioinformaticsTracker = () => {
                 <Grid3X3 size={16} />
                 Projects
               </button>
+              <button
+                onClick={() => setCurrentView('about')}
+                className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  currentView === 'about'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : darkMode
+                    ? 'text-gray-300 hover:text-white'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                About
+              </button>
             </div>
 
             {/* Dark Mode Toggle */}
@@ -1773,6 +1947,11 @@ const BioinformaticsTracker = () => {
               </div>
             )}
           </>
+        )}
+
+        {/* About View */}
+        {currentView === 'about' && (
+          <About darkMode={darkMode} />
         )}
 
         {/* Enhanced Project Form Modal */}
