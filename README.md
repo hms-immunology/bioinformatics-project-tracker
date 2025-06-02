@@ -217,8 +217,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Eren Ada, PhD**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@domain.com
+- GitHub: [@erenada](https://github.com/erenada)
+- Email: erenada@gmail.com
 
 ## Acknowledgments
 
