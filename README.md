@@ -49,6 +49,16 @@ A comprehensive web application designed specifically for bioinformatics researc
 - **Word document export** for detailed project documentation
 - **Local data persistence** with browser storage
 
+## Screenshots
+
+### Main Dashboard
+![Project Overview](screenshots/project-overview.png)
+*Main dashboard showing project cards with drag-and-drop functionality, filtering options, and progress visualization*
+
+### Project Details & Analytics
+![Project Details](screenshots/project-details.png)
+*Detailed project view with step tracking, time management, and analytics dashboard*
+
 ## Quick Start
 
 ### Prerequisites
