@@ -1456,13 +1456,15 @@ const About = ({ darkMode }) => {
             </div>
             <div className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               <h4 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
-                Data Export
+                Data Export & Backup
               </h4>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li>PDF report generation</li>
                 <li>Word document export</li>
-                <li>Local data persistence</li>
+                <li>JSON data backup and restore</li>
+                <li>Local data persistence with auto-save</li>
                 <li>Complete privacy protection</li>
+                <li>Cross-browser data transfer</li>
               </ul>
             </div>
           </div>
@@ -1617,6 +1619,59 @@ const BioinformaticsTracker = () => {
   useEffect(() => {
     localStorage.setItem('bioinf-dark-mode', JSON.stringify(darkMode));
   }, [darkMode]);
+
+  // Data export function for JSON backup
+  const exportData = () => {
+    const data = {
+      projects: projects,
+      darkMode: darkMode,
+      exportDate: new Date().toISOString(),
+      version: "1.0.0"
+    };
+    const dataStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `bioinf-tracker-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Data import function for JSON backup restoration
+  const importData = (file) => {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const data = JSON.parse(event.target.result);
+        if (data.projects && Array.isArray(data.projects)) {
+          setProjects(data.projects);
+          if (typeof data.darkMode === 'boolean') {
+            setDarkMode(data.darkMode);
+          }
+          alert(`Successfully imported ${data.projects.length} projects from backup created on ${data.exportDate ? new Date(data.exportDate).toLocaleDateString() : 'unknown date'}`);
+        } else {
+          alert('Invalid backup file format. Please select a valid bioinf-tracker backup file.');
+        }
+      } catch (error) {
+        alert('Error importing data: ' + error.message);
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  // Manual save function for emergency backup
+  const manualSave = () => {
+    try {
+      localStorage.setItem('bioinf-projects', JSON.stringify(projects));
+      localStorage.setItem('bioinf-dark-mode', JSON.stringify(darkMode));
+      console.log('Manual save completed - Projects:', projects.length);
+      return true;
+    } catch (error) {
+      console.error('Error during manual save:', error);
+      return false;
+    }
+  };
 
   // Drag and drop sensors
   const sensors = useSensors(
@@ -1791,13 +1846,70 @@ const BioinformaticsTracker = () => {
       <div className="max-w-7xl mx-auto">
         {/* Enhanced Header */}
         <div className="flex justify-between items-center mb-8">
-          <div>
+          <div className="flex-1">
             <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               Bioinformatics Project Tracker
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} mt-2`}>
               Manage your research projects, track progress, and meet deadlines
             </p>
+            
+            {/* Data Backup Controls - Moved to separate row */}
+            <div className="flex items-center gap-3 mt-3">
+              <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                Data Backup:
+              </span>
+              <button
+                onClick={exportData}
+                className={`px-3 py-1 text-xs border rounded flex items-center gap-1 transition-colors ${
+                  darkMode 
+                    ? 'bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600' 
+                    : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+                title="Export all data as JSON backup"
+              >
+                <Download size={12} />
+                Export
+              </button>
+              
+              <label className={`px-3 py-1 text-xs border rounded flex items-center gap-1 cursor-pointer transition-colors ${
+                darkMode 
+                  ? 'bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600' 
+                  : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+              }`} title="Import data from JSON backup">
+                <Upload size={12} />
+                Import
+                <input
+                  type="file"
+                  accept=".json"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                      importData(file);
+                    }
+                    e.target.value = ''; // Reset file input
+                  }}
+                  className="hidden"
+                />
+              </label>
+              
+              <button
+                onClick={manualSave}
+                className={`px-3 py-1 text-xs border rounded flex items-center gap-1 transition-colors ${
+                  darkMode 
+                    ? 'bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600' 
+                    : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+                title="Manual save to localStorage"
+              >
+                💾 Save
+              </button>
+              
+              {/* Auto-save indicator */}
+              <div className={`text-xs ${darkMode ? 'text-gray-500' : 'text-gray-400'} ml-2 border-l pl-3 ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}>
+                Auto-save: {projects.length} projects stored
+              </div>
+            </div>
           </div>
           
           <div className="flex items-center gap-4">
